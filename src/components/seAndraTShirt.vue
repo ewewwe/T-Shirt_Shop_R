@@ -11,9 +11,13 @@ export default {
       TShirts: {
         view: ''
       },
+      order:'',
 
       ChoseTShirt(TShirt) {
         this.TShirts.view = TShirt;
+      },
+      Order(Order){
+        this.order = Order;
       }
 
     };

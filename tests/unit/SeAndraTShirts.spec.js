@@ -11,4 +11,9 @@ describe('seAndraTShirt', () =>{
         wrapper.vm.ChoseTShirt('TShirt1')
         expect(wrapper.vm.TShirts.view).toEqual('TShirt1')
     })
+    test('Order', () =>{
+        const wrapper = mount(seAndraTShirt)
+        wrapper.vm.Order('True')
+        expect(wrapper.vm.order).toEqual('True')
+    })
 })
