@@ -1,0 +1,540 @@
+[
+  {
+    "name": "01-delete-all-users",
+    "request": {
+      "uri": "http://localhost:3000/rest/users",
+      "method": "delete"
+    },
+    "response": {
+      "fieldCount": 0,
+      "affectedRows": 5,
+      "insertId": 0,
+      "serverStatus": 34,
+      "warningCount": 0,
+      "message": "",
+      "protocol41": true,
+      "changedRows": 0
+    },
+    "tests": [
+      "expect(response.warningCount).to.equal(0)"
+    ],
+    "status": "passed"
+  },
+  {
+    "name": "02-check-no-users",
+    "request": {
+      "uri": "http://localhost:3000/rest/users",
+      "method": "get"
+    },
+    "response": [],
+    "tests": [
+      "assert.deepEqual(response, [])"
+    ],
+    "status": "passed"
+  },
+  {
+    "name": "03-create-users",
+    "request": {
+      "uri": "http://localhost:3000/rest/users",
+      "method": "post",
+      "body": {
+        "firstName": "Jyoti",
+        "lastName": "Ollarenshaw",
+        "email": "jollarenshaw0@wikia.com",
+        "password": "EyepxpnYjV",
+        "id": 123
+      }
+    },
+    "response": {
+      "fieldCount": 0,
+      "affectedRows": 1,
+      "insertId": 123,
+      "serverStatus": 2,
+      "warningCount": 0,
+      "message": "",
+      "protocol41": true,
+      "changedRows": 0
+    },
+    "tests": [
+      "response.affectedRows.should.equal(1)"
+    ],
+    "status": "passed"
+  },
+  {
+    "name": "03-create-users",
+    "request": {
+      "uri": "http://localhost:3000/rest/users",
+      "method": "post",
+      "body": {
+        "firstName": "Chaunce",
+        "lastName": "Vatini",
+        "email": "cvatini1@studiopress.com",
+        "password": "iSNbZV",
+        "id": 124
+      }
+    },
+    "response": {
+      "fieldCount": 0,
+      "affectedRows": 1,
+      "insertId": 124,
+      "serverStatus": 2,
+      "warningCount": 0,
+      "message": "",
+      "protocol41": true,
+      "changedRows": 0
+    },
+    "tests": [
+      "response.affectedRows.should.equal(1)"
+    ],
+    "status": "passed"
+  },
+  {
+    "name": "03-create-users",
+    "request": {
+      "uri": "http://localhost:3000/rest/users",
+      "method": "post",
+      "body": {
+        "firstName": "Maurine",
+        "lastName": "Gerardet",
+        "email": "mgerardet2@boston.com",
+        "password": "g9m0Yf",
+        "id": 125
+      }
+    },
+    "response": {
+      "fieldCount": 0,
+      "affectedRows": 1,
+      "insertId": 125,
+      "serverStatus": 2,
+      "warningCount": 0,
+      "message": "",
+      "protocol41": true,
+      "changedRows": 0
+    },
+    "tests": [
+      "response.affectedRows.should.equal(1)"
+    ],
+    "status": "passed"
+  },
+  {
+    "name": "03-create-users",
+    "request": {
+      "uri": "http://localhost:3000/rest/users",
+      "method": "post",
+      "body": {
+        "firstName": "Harri",
+        "lastName": "Denniss",
+        "email": "hdenniss3@twitpic.com",
+        "password": "HJY8wAnQ9",
+        "id": 126
+      }
+    },
+    "response": {
+      "fieldCount": 0,
+      "affectedRows": 1,
+      "insertId": 126,
+      "serverStatus": 2,
+      "warningCount": 0,
+      "message": "",
+      "protocol41": true,
+      "changedRows": 0
+    },
+    "tests": [
+      "response.affectedRows.should.equal(1)"
+    ],
+    "status": "passed"
+  },
+  {
+    "name": "03-create-users",
+    "request": {
+      "uri": "http://localhost:3000/rest/users",
+      "method": "post",
+      "body": {
+        "firstName": "Nolie",
+        "lastName": "Fabbri",
+        "email": "nfabbri4@noaa.gov",
+        "password": "y9Sjfx",
+        "id": 127
+      }
+    },
+    "response": {
+      "fieldCount": 0,
+      "affectedRows": 1,
+      "insertId": 127,
+      "serverStatus": 2,
+      "warningCount": 0,
+      "message": "",
+      "protocol41": true,
+      "changedRows": 0
+    },
+    "tests": [
+      "response.affectedRows.should.equal(1)"
+    ],
+    "status": "passed"
+  },
+  {
+    "name": "04-check-all-users-inserted",
+    "request": {
+      "uri": "http://localhost:3000/rest/users",
+      "method": "get"
+    },
+    "response": [
+      {
+        "id": 123,
+        "firstName": "Jyoti",
+        "lastName": "Ollarenshaw",
+        "email": "jollarenshaw0@wikia.com",
+        "password": "EyepxpnYjV"
+      },
+      {
+        "id": 124,
+        "firstName": "Chaunce",
+        "lastName": "Vatini",
+        "email": "cvatini1@studiopress.com",
+        "password": "iSNbZV"
+      },
+      {
+        "id": 125,
+        "firstName": "Maurine",
+        "lastName": "Gerardet",
+        "email": "mgerardet2@boston.com",
+        "password": "g9m0Yf"
+      },
+      {
+        "id": 126,
+        "firstName": "Harri",
+        "lastName": "Denniss",
+        "email": "hdenniss3@twitpic.com",
+        "password": "HJY8wAnQ9"
+      },
+      {
+        "id": 127,
+        "firstName": "Nolie",
+        "lastName": "Fabbri",
+        "email": "nfabbri4@noaa.gov",
+        "password": "y9Sjfx"
+      }
+    ],
+    "tests": [
+      "assert.equal(response.length, store.mockUsers.length)",
+      "assert.deepEqual(response, store.mockUsers)"
+    ],
+    "status": "passed"
+  },
+  {
+    "name": "05-delete-all-orders",
+    "request": {
+      "uri": "http://localhost:3000/rest/orders",
+      "method": "delete"
+    },
+    "response": {
+      "fieldCount": 0,
+      "affectedRows": 6,
+      "insertId": 0,
+      "serverStatus": 34,
+      "warningCount": 0,
+      "message": "",
+      "protocol41": true,
+      "changedRows": 0
+    },
+    "tests": [
+      "expect(response.warningCount).to.equal(0);"
+    ],
+    "status": "passed"
+  },
+  {
+    "name": "06-check-no-orders",
+    "request": {
+      "uri": "http://localhost:3000/rest/orders",
+      "method": "get"
+    },
+    "response": [],
+    "tests": [
+      "assert.deepEqual(response, []);"
+    ],
+    "status": "passed"
+  },
+  {
+    "name": "07-create-orders",
+    "request": {
+      "uri": "http://localhost:3000/rest/orders",
+      "method": "post",
+      "body": {
+        "orderNumber": 123456789,
+        "UserID": 1234,
+        "Price": 150,
+        "id": 91
+      }
+    },
+    "response": {
+      "fieldCount": 0,
+      "affectedRows": 1,
+      "insertId": 91,
+      "serverStatus": 2,
+      "warningCount": 0,
+      "message": "",
+      "protocol41": true,
+      "changedRows": 0
+    },
+    "tests": [
+      "response.affectedRows.should.equal(1);"
+    ],
+    "status": "passed"
+  },
+  {
+    "name": "07-create-orders",
+    "request": {
+      "uri": "http://localhost:3000/rest/orders",
+      "method": "post",
+      "body": {
+        "orderNumber": 113456789,
+        "UserID": 3321,
+        "Price": 1500,
+        "id": 92
+      }
+    },
+    "response": {
+      "fieldCount": 0,
+      "affectedRows": 1,
+      "insertId": 92,
+      "serverStatus": 2,
+      "warningCount": 0,
+      "message": "",
+      "protocol41": true,
+      "changedRows": 0
+    },
+    "tests": [
+      "response.affectedRows.should.equal(1);"
+    ],
+    "status": "passed"
+  },
+  {
+    "name": "07-create-orders",
+    "request": {
+      "uri": "http://localhost:3000/rest/orders",
+      "method": "post",
+      "body": {
+        "orderNumber": 122456789,
+        "UserID": 1234,
+        "Price": 300,
+        "id": 93
+      }
+    },
+    "response": {
+      "fieldCount": 0,
+      "affectedRows": 1,
+      "insertId": 93,
+      "serverStatus": 2,
+      "warningCount": 0,
+      "message": "",
+      "protocol41": true,
+      "changedRows": 0
+    },
+    "tests": [
+      "response.affectedRows.should.equal(1);"
+    ],
+    "status": "passed"
+  },
+  {
+    "name": "07-create-orders",
+    "request": {
+      "uri": "http://localhost:3000/rest/orders",
+      "method": "post",
+      "body": {
+        "orderNumber": 123256789,
+        "UserID": 7683,
+        "Price": 450,
+        "id": 94
+      }
+    },
+    "response": {
+      "fieldCount": 0,
+      "affectedRows": 1,
+      "insertId": 94,
+      "serverStatus": 2,
+      "warningCount": 0,
+      "message": "",
+      "protocol41": true,
+      "changedRows": 0
+    },
+    "tests": [
+      "response.affectedRows.should.equal(1);"
+    ],
+    "status": "passed"
+  },
+  {
+    "name": "07-create-orders",
+    "request": {
+      "uri": "http://localhost:3000/rest/orders",
+      "method": "post",
+      "body": {
+        "orderNumber": 123446789,
+        "UserID": 1233,
+        "Price": 100,
+        "id": 95
+      }
+    },
+    "response": {
+      "fieldCount": 0,
+      "affectedRows": 1,
+      "insertId": 95,
+      "serverStatus": 2,
+      "warningCount": 0,
+      "message": "",
+      "protocol41": true,
+      "changedRows": 0
+    },
+    "tests": [
+      "response.affectedRows.should.equal(1);"
+    ],
+    "status": "passed"
+  },
+  {
+    "name": "07-create-orders",
+    "request": {
+      "uri": "http://localhost:3000/rest/orders",
+      "method": "post",
+      "body": {
+        "orderNumber": 123455789,
+        "UserID": 4444,
+        "Price": 500,
+        "id": 96
+      }
+    },
+    "response": {
+      "fieldCount": 0,
+      "affectedRows": 1,
+      "insertId": 96,
+      "serverStatus": 2,
+      "warningCount": 0,
+      "message": "",
+      "protocol41": true,
+      "changedRows": 0
+    },
+    "tests": [
+      "response.affectedRows.should.equal(1);"
+    ],
+    "status": "passed"
+  },
+  {
+    "name": "08-check-all-orders-inserted",
+    "request": {
+      "uri": "http://localhost:3000/rest/orders",
+      "method": "get"
+    },
+    "response": [
+      {
+        "ID": 91,
+        "orderNumber": 123456789,
+        "UserID": 1234,
+        "Price": 150
+      },
+      {
+        "ID": 92,
+        "orderNumber": 113456789,
+        "UserID": 3321,
+        "Price": 1500
+      },
+      {
+        "ID": 93,
+        "orderNumber": 122456789,
+        "UserID": 1234,
+        "Price": 300
+      },
+      {
+        "ID": 94,
+        "orderNumber": 123256789,
+        "UserID": 7683,
+        "Price": 450
+      },
+      {
+        "ID": 95,
+        "orderNumber": 123446789,
+        "UserID": 1233,
+        "Price": 100
+      },
+      {
+        "ID": 96,
+        "orderNumber": 123455789,
+        "UserID": 4444,
+        "Price": 500
+      }
+    ],
+    "tests": [
+      "assert.equal(response.length, store.mockOrders.length);",
+      "*assert.deepEqual(response, store.mockOrders)"
+    ],
+    "status": "failed",
+    "error": "AssertionError: expected [ Array(6) ] to deeply equal [ Array(6) ]"
+  },
+  {
+    "name": "09-get-order",
+    "request": {
+      "uri": "http://localhost:3000/rest/orders",
+      "method": "get"
+    },
+    "response": [
+      {
+        "ID": 91,
+        "orderNumber": 123456789,
+        "UserID": 1234,
+        "Price": 150
+      },
+      {
+        "ID": 92,
+        "orderNumber": 113456789,
+        "UserID": 3321,
+        "Price": 1500
+      },
+      {
+        "ID": 93,
+        "orderNumber": 122456789,
+        "UserID": 1234,
+        "Price": 300
+      },
+      {
+        "ID": 94,
+        "orderNumber": 123256789,
+        "UserID": 7683,
+        "Price": 450
+      },
+      {
+        "ID": 95,
+        "orderNumber": 123446789,
+        "UserID": 1233,
+        "Price": 100
+      },
+      {
+        "ID": 96,
+        "orderNumber": 123455789,
+        "UserID": 4444,
+        "Price": 500
+      }
+    ],
+    "tests": [
+      "assert.deepEqual(response[0].orderNumber,store.mockOrders[0].orderNumber);"
+    ],
+    "status": "passed"
+  },
+  {
+    "name": "10-Order-order",
+    "request": {
+      "uri": "http://localhost:3000/rest/orders",
+      "method": "post",
+      "body": {
+        "orderNumber": 123456789,
+        "UserID": 1234,
+        "Price": 150,
+        "id": 91
+      }
+    },
+    "response": {
+      "error": 404
+    },
+    "tests": [
+      "*response.affectedRows.should.equal(1)"
+    ],
+    "status": "failed",
+    "error": "TypeError: Cannot read property 'should' of undefined"
+  }
+]
