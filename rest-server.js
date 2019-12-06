@@ -7,7 +7,7 @@ const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.json({limit: '50mb'}));
 // porten vi servar på (som i http://localhost:3000 )
-//const port = 3000;
+const port = 3000;
 
 // Konfigurera databasanslutningen
 const mysql = require('mysql');
@@ -68,10 +68,10 @@ app.delete('/rest/:table/:id', async (req, res) => {
 });
 
 // ska fånga alla utstående anrop till /rest som inte matchat någon tabell ovan
-/*app.all('/rest/*', async (req, res) => {
-  console.log('not found', req.path, req.method);
+app.all('/rest/*', async (req, res) => {
+  //console.log('not found', req.path, req.method);
   res.status(404).end();
-});*/
+});
 
 // serve frontend files (all existing files in the client folder will respond)
 app.use(express.static( './client/'));
@@ -79,11 +79,13 @@ app.use(express.static( './client/'));
 // and send them to our index.html file
 // because that is how we get virtual routes in the front-end (and front-end 404's)
 // use a little regex for that (not match rest)
-/*app.get('*', async(req, res)=>{
+app.get('*', async(req, res)=>{
+  // eslint-disable-next-line no-undef
   res.sendFile(path.normalize(__dirname + '/client/index.html'));
 });
 
 // servern startas
 app.listen(port, () => {
+  // eslint-disable-next-line no-console
   console.log('server running on port ' + port);
-})*/
+})
